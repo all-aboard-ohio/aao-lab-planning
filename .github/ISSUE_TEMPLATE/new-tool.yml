@@ -1,0 +1,89 @@
+name: New Tool or App Proposal
+description: Propose a new deployable web tool or application for the AAO Data Lab
+title: "feat: [Tool Name]"
+labels: ["feature", "new-tool"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to propose a new web tool or app. Fill out as much as you can — a maintainer will help you refine the scope before work begins.
+
+        **Before submitting:** check open issues to see if this has already been proposed, and mention it in [#projects on Slack](https://join.slack.com/t/lab-allaboardohio/shared_invite/zt-3x7cyvl53-0IQMjvljmA64iNCZvhaP1w).
+
+  - type: input
+    id: tool-name
+    attributes:
+      label: Tool Name
+      placeholder: e.g. Economic Impact Calculator
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal & Audience
+      description: What problem does this solve? Who will use it and how?
+    validations:
+      required: true
+
+  - type: textarea
+    id: features
+    attributes:
+      label: Core Features (v1 scope)
+      description: List the key features. Keep it to the essential scope for a first version.
+      placeholder: "- Feature one\n- Feature two\n- Feature three"
+    validations:
+      required: true
+
+  - type: textarea
+    id: data-sources
+    attributes:
+      label: Data Sources
+      description: What public datasets, APIs, or external sources will this tool rely on?
+      placeholder: "e.g. US BTS ridership data, ODOT Open Data, OpenStreetMap"
+
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Deployment Target
+      description: See the [architecture guide](https://github.com/all-aboard-ohio/aao-lab-docs/blob/main/architecture.md) if unsure — prefer GitHub Pages.
+      options:
+        - GitHub Pages (static / SPA — preferred)
+        - Google Cloud (requires backend or database — must include donation component)
+        - Unknown — needs discussion
+    validations:
+      required: true
+
+  - type: input
+    id: subdomain
+    attributes:
+      label: Requested Subdomain
+      description: What subdomain would you like? Request is made in #infrastructure on Slack after deployment.
+      placeholder: e.g. impact.lab.allaboardohio.org
+
+  - type: checkboxes
+    id: disciplines
+    attributes:
+      label: Disciplines Needed
+      description: Check all that this project will require.
+      options:
+        - label: Software Developer
+        - label: Data Analyst / Engineer
+        - label: UI/UX Designer
+        - label: Policy Analyst
+        - label: Researcher
+        - label: Project Manager
+        - label: Technical Writer
+
+  - type: textarea
+    id: dod
+    attributes:
+      label: Definition of Done
+      description: What does a complete, shippable v1 look like?
+      placeholder: "- [ ] Core feature works on desktop and mobile\n- [ ] WCAG 2.1 AA passing\n- [ ] Includes aao-site-header and aao-notification\n- [ ] Deployed to GitHub Pages\n- [ ] README documents data sources and setup"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Architecture considerations, comparable tools, references, open questions.

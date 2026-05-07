@@ -1,0 +1,88 @@
+name: New Analysis or Research Proposal
+description: Propose a data model, analysis notebook, cleaned dataset, or research deliverable
+title: "data: [Analysis Name]"
+labels: ["data", "research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to propose a research analysis, data model, or dataset. The output might be a Jupyter notebook, a cleaned dataset, a methodology document, or a visualization — not necessarily a deployed web app.
+
+        **Before submitting:** mention it in [#projects on Slack](https://join.slack.com/t/lab-allaboardohio/shared_invite/zt-3x7cyvl53-0IQMjvljmA64iNCZvhaP1w).
+
+  - type: input
+    id: analysis-name
+    attributes:
+      label: Analysis Name
+      placeholder: e.g. Ohio Rail Ridership Catchment Model
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Research Question
+      description: What are we trying to find out, model, or prove?
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected Output
+      description: What does done look like? A notebook? A dataset? A report? A chart?
+      placeholder: "e.g. A reproducible Jupyter notebook with documented methodology and exportable CSV results"
+    validations:
+      required: true
+
+  - type: textarea
+    id: data-sources
+    attributes:
+      label: Data Sources
+      description: What raw data, APIs, or studies will this draw from?
+      placeholder: "e.g. US Census ACS, APTA ridership reports, Ohio Hub Study"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: output-type
+    attributes:
+      label: Primary Output Type
+      options:
+        - Jupyter Notebook (Python)
+        - R Markdown / Quarto
+        - Cleaned Dataset (CSV / GeoJSON)
+        - Methodology Document
+        - Visualization / Chart
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: methodology
+    attributes:
+      label: Methodology (draft)
+      description: Describe the approach, even roughly. This will be reviewed and refined before work begins.
+
+  - type: textarea
+    id: consumed-by
+    attributes:
+      label: Will this feed other AAO tools?
+      description: Does another tool (e.g. Route Mapper, Impact Calculator) depend on or benefit from this output?
+
+  - type: checkboxes
+    id: disciplines
+    attributes:
+      label: Disciplines Needed
+      options:
+        - label: Data Analyst / Engineer
+        - label: Researcher
+        - label: Policy Analyst
+        - label: Software Developer (for data pipeline or API)
+        - label: Technical Writer
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Prior art, comparable studies, caveats, data access issues, open questions.
